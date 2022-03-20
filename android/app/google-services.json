@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "639502913611",
+    "project_id": "startchat-4c4bc",
+    "storage_bucket": "startchat-4c4bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639502913611:android:f7a0ddebb24e91a881fdce",
+        "android_client_info": {
+          "package_name": "com.example.startchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639502913611-apsqmr1s530penr0dpn299m1g0dl1ojr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.startchat",
+            "certificate_hash": "a5b79ecd991637d4756fffc475c02257faa0f9bf"
+          }
+        },
+        {
+          "client_id": "639502913611-c31kd67ous3dv4t2pv3nj44ramdh79l7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnwQxY_io_iJ-PlLP3-beGFT7fmXQ-qsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639502913611-c31kd67ous3dv4t2pv3nj44ramdh79l7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
