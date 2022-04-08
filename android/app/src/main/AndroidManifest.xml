@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.startchat">
+    package="com.example.startchat"
+    xmlns:tools="http://schemas.android.com/tools">
    <application
+        tools:replace="android:label"
         android:label="startchat"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
