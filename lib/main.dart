@@ -5,6 +5,7 @@ import 'package:startchat/utils/colors.dart';
 
 import 'resources/auth_methods.dart';
 import 'screens/home_screen.dart';
+import 'screens/video_call_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
+        '/video-call': (context) => const VideoCallScreen(),
       },
       home: StreamBuilder(
         stream: AuthMethods().authChanges,

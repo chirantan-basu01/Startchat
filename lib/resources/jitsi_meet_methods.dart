@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:jitsi_meet/feature_flag/feature_flag.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:startchat/resources/auth_methods.dart';
