@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jitsi_meet/jitsi_meet.dart';
+import 'package:startchat/resources/jitsi_meet_methods.dart';
+import 'package:startchat/widgets/meeting_option.dart';
 
 import '../resources/auth_methods.dart';
 import '../utils/colors.dart';
@@ -14,6 +17,10 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   final AuthMethods _authMethods = AuthMethods();
   late TextEditingController meetingIdController;
   late TextEditingController nameController;
+  final JitsiMeetMethods _jitsiMeetMethods = JitsiMeetMethods();
+
+  bool isAudioMuted = true;
+  bool isVideoMuted = true;
 
   @override
   void initState() {
@@ -24,7 +31,22 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     super.initState();
   }
 
-  _joinMeeting() {}
+  @override
+  void dispose() {
+    super.dispose();
+    meetingIdController.dispose();
+    nameController.dispose();
+    JitsiMeet.removeAllListeners();
+  }
+
+  _joinMeeting() {
+    _jitsiMeetMethods.createMeeting(
+      roomName: meetingIdController.text,
+      isAudioMuted: isAudioMuted,
+      isVideoMuted: isVideoMuted,
+      username: nameController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +110,34 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 ),
               ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          MeetingOption(
+            text: 'Mute Audio',
+            isMute: isAudioMuted,
+            onChange: onAudioMuted,
+          ),
+          MeetingOption(
+            text: 'Turn off My Video',
+            isMute: isVideoMuted,
+            onChange: onVideoMuted,
+          ),
         ],
       ),
     );
+  }
+
+  onAudioMuted(bool val) {
+    setState(() {
+      isAudioMuted = val;
+    });
+  }
+
+  onVideoMuted(bool val) {
+    setState(() {
+      isVideoMuted = val;
+    });
   }
 }
