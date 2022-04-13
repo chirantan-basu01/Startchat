@@ -3,9 +3,11 @@
 import 'package:jitsi_meet/feature_flag/feature_flag.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:startchat/resources/auth_methods.dart';
+import 'package:startchat/resources/firestore_methods.dart';
 
 class JitsiMeetMethods {
   final AuthMethods _authMethods = AuthMethods();
+  final FirestoreMethods _firestoreMethods = FirestoreMethods();
 
   void createMeeting({
     required String roomName,
@@ -34,6 +36,7 @@ class JitsiMeetMethods {
         ..audioMuted = isAudioMuted
         ..videoMuted = isVideoMuted;
 
+      _firestoreMethods.addToMeetingHistory(roomName);
       await JitsiMeet.joinMeeting(options);
     } catch (error) {
       print("error: $error");
