@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:startchat/screens/history_meeting_screen.dart';
 import 'package:startchat/screens/meeting_screen.dart';
+import 'package:startchat/widgets/custom_button.dart';
+import '../resources/auth_methods.dart';
 import '../utils/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    const Text('Settings'),
+    CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
   ];
 
   @override
