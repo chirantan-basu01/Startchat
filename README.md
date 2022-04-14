@@ -38,7 +38,7 @@ The following features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<!-- [![Demo CountPages alpha](https://j.gifs.com/16EZMR.gif)](https://youtu.be/zPLYjCdugfs) -->
+[![Startchat](https://yt-embed.herokuapp.com/embed?v=9dAaeu-bzy4)](https://www.youtube.com/watch?v=9dAaeu-bzy4 "Startchat")
 
 
 ## License
